@@ -4,13 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
-        uses: action/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
+      - uses: action/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14
-      - name: Install dependency
-        run: npm ci
-      - name: Run Tests
-        run: npm test
+          node-version: '14'
+      - run: npm install -g bats
